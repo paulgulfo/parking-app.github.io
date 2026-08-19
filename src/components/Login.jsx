@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth'
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '../firebaseConfig'
 
 export default function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isRegister, setIsRegister] = useState(false)
-  const auth = getAuth()
+  // `auth` is imported from `src/firebaseConfig.js`
 
   const submit = async (e) => {
     e.preventDefault()

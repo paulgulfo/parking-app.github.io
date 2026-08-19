@@ -1,23 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { initializeApp } from 'firebase/app'
-import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth'
-import { getFirestore } from 'firebase/firestore'
+import { onAuthStateChanged, signOut } from 'firebase/auth'
+import { auth, db } from './firebaseConfig'
 import Login from './components/Login'
 import Dashboard from './components/Dashboard'
 
-// TODO: replace with your Firebase config
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-}
-
-initializeApp(firebaseConfig)
-const db = getFirestore()
+// Firebase config is loaded from `src/firebaseConfig.js` (replace placeholders there)
 
 export default function App() {
   const [user, setUser] = useState(null)
-  const auth = getAuth()
+  
 
   useEffect(() => {
     return onAuthStateChanged(auth, (u) => setUser(u))

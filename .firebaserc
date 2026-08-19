@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "parking-app-12345",
+    "yes": "food-ordering-3b775"
+  },
+  "targets": {},
+  "etags": {}
+}

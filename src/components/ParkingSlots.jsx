@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import QRCode from 'qrcode.react'
+import { QRCodeSVG } from 'qrcode.react'
 import { collection, addDoc, serverTimestamp, onSnapshot, doc, updateDoc } from 'firebase/firestore'
 
 const initialSlots = []
