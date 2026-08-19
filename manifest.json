@@ -1,7 +1,7 @@
 {
   "name": "Parking App",
   "short_name": "Parking",
-  "start_url": "/Parking-app.github.io/",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0ea5a4",
