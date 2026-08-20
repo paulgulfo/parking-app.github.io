@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { collection, onSnapshot, doc, updateDoc } from 'firebase/firestore'
+import { collection, onSnapshot, doc, updateDoc, getDocs, setDoc } from 'firebase/firestore'
 import ParkingSlots from './ParkingSlots'
 
 export default function AdminDashboard({ user, db }) {
   const [reservations, setReservations] = useState([])
   const [stats, setStats] = useState({ total: 0, occupied: 0, available: 0 })
+  const [slots, setSlots] = useState([])
+  const [initializing, setInitializing] = useState(false)
 
   useEffect(() => {
     if (!db) return
@@ -15,6 +17,40 @@ export default function AdminDashboard({ user, db }) {
     })
     return () => unsub()
   }, [db])
+
+  useEffect(() => {
+    if (!db) return
+    const slotsCol = collection(db, 'slots')
+    const unsub = onSnapshot(slotsCol, (snap) => {
+      const arr = snap.docs.map((d) => ({ _docId: d.id, ...d.data() }))
+      setSlots(arr)
+    })
+    return () => unsub()
+  }, [db])
+
+  const initializeSlots = async () => {
+    if (!db) return
+    if (slots.length > 0 && !window.confirm('Slots already exist. Reinitialize?')) return
+    
+    setInitializing(true)
+    try {
+      const slotsCol = collection(db, 'slots')
+      for (let i = 1; i <= 8; i++) {
+        await setDoc(doc(slotsCol, String(i)), {
+          id: i,
+          label: `Slot ${i}`,
+          occupied: false,
+          vehicle: null,
+          reservationId: null,
+        })
+      }
+      alert('✅ 8 parking slots created successfully!')
+    } catch (err) {
+      alert('❌ Failed to initialize slots: ' + err.message)
+    } finally {
+      setInitializing(false)
+    }
+  }
 
   const handleDeleteReservation = async (resId) => {
     if (!window.confirm('Delete this reservation?')) return
@@ -41,7 +77,7 @@ export default function AdminDashboard({ user, db }) {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <div className="bg-white p-4 rounded shadow">
           <div className="text-sm text-gray-500">Total Slots</div>
-          <div className="text-3xl font-bold text-purple-600">8</div>
+          <div className="text-3xl font-bold text-purple-600">{slots.length || 0}</div>
         </div>
         <div className="bg-white p-4 rounded shadow">
           <div className="text-sm text-gray-500">Active Reservations</div>
@@ -114,7 +150,18 @@ export default function AdminDashboard({ user, db }) {
       </div>
 
       <div className="mb-6">
-        <h3 className="font-semibold mb-4 text-lg">Parking Slots Management</h3>
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="font-semibold text-lg">Parking Slots Management</h3>
+          {slots.length === 0 && (
+            <button
+              onClick={initializeSlots}
+              disabled={initializing}
+              className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 disabled:bg-gray-400 transition font-semibold"
+            >
+              {initializing ? '⏳ Initializing...' : '🅿️ Initialize 8 Slots'}
+            </button>
+          )}
+        </div>
         <ParkingSlots db={db} user={user} isAdmin={true} />
       </div>
     </div>
