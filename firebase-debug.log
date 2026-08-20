@@ -1,0 +1,150 @@
+[debug] [2026-08-20T10:55:04.649Z] ----------------------------------------------------------------------
+[debug] [2026-08-20T10:55:04.653Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ADMIN\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only firestore:rules hosting
+[debug] [2026-08-20T10:55:04.653Z] CLI Version:   15.27.0
+[debug] [2026-08-20T10:55:04.653Z] Platform:      win32
+[debug] [2026-08-20T10:55:04.653Z] Node Version:  v24.18.0
+[debug] [2026-08-20T10:55:04.653Z] Detected Agent: unknown
+[debug] [2026-08-20T10:55:04.653Z] Time:          Thu Aug 20 2026 18:55:04 GMT+0800 (Philippine Standard Time)
+[debug] [2026-08-20T10:55:04.653Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-08-20T10:55:06.419Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-08-20T10:55:06.419Z] > authorizing via signed-in user (gulfopaul3@gmail.com)
+[debug] [2026-08-20T10:55:06.419Z] [iam] checking project parking-app-3556f for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-08-20T10:55:06.432Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:06.432Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:06.433Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/parking-app-3556f:testIamPermissions [none]
+[debug] [2026-08-20T10:55:06.433Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/parking-app-3556f:testIamPermissions  x-goog-user-project=parking-app-3556f
+[debug] [2026-08-20T10:55:06.433Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/parking-app-3556f:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-08-20T10:55:07.029Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/parking-app-3556f:testIamPermissions 200
+[debug] [2026-08-20T10:55:07.029Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/parking-app-3556f:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-08-20T10:55:07.030Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:07.030Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:07.030Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/parking-app-3556f [none]
+[debug] [2026-08-20T10:55:07.796Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/parking-app-3556f 200
+[debug] [2026-08-20T10:55:07.796Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/parking-app-3556f {"projectId":"parking-app-3556f","projectNumber":"822236636602","displayName":"Parking-app","name":"projects/parking-app-3556f","resources":{"hostingSite":"parking-app-3556f"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_706517f2-948a-4a4a-b7d8-709c2855c674"}
+[info] 
+[info] === Deploying to 'parking-app-3556f'...
+[info] 
+[info] i  deploying firestore, hosting 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2026-08-20T10:55:07.801Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:07.801Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:07.801Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/parking-app-3556f/databases/(default) [none]
+[debug] [2026-08-20T10:55:08.278Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/parking-app-3556f/databases/(default) 200
+[debug] [2026-08-20T10:55:08.278Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/parking-app-3556f/databases/(default) {"name":"projects/parking-app-3556f/databases/(default)","uid":"85453e78-af62-4a3c-bd18-9f71044f54b2","createTime":"2026-08-19T06:24:23.587764Z","updateTime":"2026-08-19T06:24:23.587764Z","locationId":"asia-southeast1","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2026-08-20T09:55:09.095531Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"zas","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"realtimeUpdatesMode":"REALTIME_UPDATES_MODE_ENABLED","etag":"IOWe5NOFr5YDMI6O6qSHrJYD"}
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2026-08-20T10:55:08.280Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:08.280Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:08.280Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/parking-app-3556f:test [none]
+[debug] [2026-08-20T10:55:08.280Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/parking-app-3556f:test [omitted]
+[debug] [2026-08-20T10:55:10.483Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/parking-app-3556f:test 200
+[debug] [2026-08-20T10:55:10.483Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/parking-app-3556f:test {}
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2026-08-20T10:55:10.484Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:10.484Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:10.485Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/parking-app-3556f/sites/parking-app-3556f [none]
+[debug] [2026-08-20T10:55:13.208Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/parking-app-3556f/sites/parking-app-3556f 200
+[debug] [2026-08-20T10:55:13.209Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/parking-app-3556f/sites/parking-app-3556f {"name":"projects/parking-app-3556f/sites/parking-app-3556f","defaultUrl":"https://parking-app-3556f.web.app","type":"DEFAULT_SITE"}
+[debug] [2026-08-20T10:55:13.211Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:13.211Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:13.212Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/parking-app-3556f/versions [none]
+[debug] [2026-08-20T10:55:13.212Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/parking-app-3556f/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-08-20T10:55:14.874Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/parking-app-3556f/versions 200
+[debug] [2026-08-20T10:55:14.874Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/parking-app-3556f/versions {"name":"projects/822236636602/sites/parking-app-3556f/versions/874951bcb6c944fa","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-08-20T10:55:19.088Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:19.088Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:19.088Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/parking-app-3556f/releases pageSize=10&pageToken=
+[debug] [2026-08-20T10:55:20.337Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/parking-app-3556f/releases 200
+[debug] [2026-08-20T10:55:20.337Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/parking-app-3556f/releases {"releases":[{"name":"projects/parking-app-3556f/releases/cloud.firestore","rulesetName":"projects/parking-app-3556f/rulesets/df5e07c4-8e07-40d8-a59f-e115c4fdb730","createTime":"2026-08-19T06:24:27.947813Z","updateTime":"2026-08-20T10:53:58.265952Z"}]}
+[debug] [2026-08-20T10:55:20.338Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:20.338Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:20.338Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/parking-app-3556f/rulesets/df5e07c4-8e07-40d8-a59f-e115c4fdb730 [none]
+[debug] [2026-08-20T10:55:21.536Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/parking-app-3556f/rulesets/df5e07c4-8e07-40d8-a59f-e115c4fdb730 200
+[debug] [2026-08-20T10:55:21.536Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/parking-app-3556f/rulesets/df5e07c4-8e07-40d8-a59f-e115c4fdb730 [omitted]
+[info] i  firestore: latest version of firestore.rules already up to date, skipping upload... 
+[info] i  hosting[parking-app-3556f]: beginning deploy... 
+[info] i  hosting[parking-app-3556f]: found 4 files in dist 
+[debug] [2026-08-20T10:55:21.550Z] [hosting] uploading with 200 concurrency
+[debug] [2026-08-20T10:55:21.553Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:21.553Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:21.554Z] [hosting] hash cache [ZGlzdA] stored for 4 files
+[debug] [2026-08-20T10:55:21.555Z] [hosting][hash queue][FINAL] {"max":1,"min":1,"avg":1,"active":0,"complete":4,"success":4,"errored":0,"retried":0,"total":4,"elapsed":3}
+[debug] [2026-08-20T10:55:21.555Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/822236636602/sites/parking-app-3556f/versions/874951bcb6c944fa:populateFiles [none]
+[debug] [2026-08-20T10:55:21.555Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/822236636602/sites/parking-app-3556f/versions/874951bcb6c944fa:populateFiles {"files":{"/index.html":"b18bca41094930a8a585e8f5e5f58e1ddcc71cfe27918e88bcae3714552a1d67","/assets/manifest-BxdrvCSQ.json":"b499c34b720a59305ce4135cd24111b54faf9a4584a6ac416f3d8df7370a4e5b","/assets/index-CS55EV9M.js":"52bf9a4068eb5fa2d6d0e3cc902fbc83858edd463a5dd88178cca9d08bb25bc9","/assets/index-C7ZpdPtL.css":"e7fd886b0a05b6c06b7b9e52c8ef961c0cb82e890bb7f911d497b2d602f01cbd"}}
+[debug] [2026-08-20T10:55:22.920Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/822236636602/sites/parking-app-3556f/versions/874951bcb6c944fa:populateFiles 200
+[debug] [2026-08-20T10:55:22.920Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/822236636602/sites/parking-app-3556f/versions/874951bcb6c944fa:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/parking-app-3556f/versions/874951bcb6c944fa/files"}
+[debug] [2026-08-20T10:55:22.921Z] [hosting][populate queue][FINAL] {"max":1368,"min":1368,"avg":1368,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1368}
+[debug] [2026-08-20T10:55:22.921Z] [hosting] uploads queued: 0
+[debug] [2026-08-20T10:55:22.921Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1787223322921}
+[info] +  hosting[parking-app-3556f]: file upload complete 
+[debug] [2026-08-20T10:55:22.922Z] [hosting] deploy completed after 1383ms
+[debug] [2026-08-20T10:55:22.922Z] [rules] releasing cloud.firestore with ruleset projects/parking-app-3556f/rulesets/df5e07c4-8e07-40d8-a59f-e115c4fdb730
+[debug] [2026-08-20T10:55:22.923Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:22.923Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:22.923Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/parking-app-3556f/releases/cloud.firestore [none]
+[debug] [2026-08-20T10:55:22.923Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/parking-app-3556f/releases/cloud.firestore {"release":{"name":"projects/parking-app-3556f/releases/cloud.firestore","rulesetName":"projects/parking-app-3556f/rulesets/df5e07c4-8e07-40d8-a59f-e115c4fdb730"}}
+[debug] [2026-08-20T10:55:24.179Z] <<< [apiv2][status] PATCH https://firebaserules.googleapis.com/v1/projects/parking-app-3556f/releases/cloud.firestore 200
+[debug] [2026-08-20T10:55:24.179Z] <<< [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/parking-app-3556f/releases/cloud.firestore {"name":"projects/parking-app-3556f/releases/cloud.firestore","rulesetName":"projects/parking-app-3556f/rulesets/df5e07c4-8e07-40d8-a59f-e115c4fdb730","createTime":"2026-08-19T06:24:27.947813Z","updateTime":"2026-08-20T10:55:24.905949Z"}
+[debug] [2026-08-20T10:55:24.179Z] [rules] updated release projects/parking-app-3556f/releases/cloud.firestore
+[info] +  firestore: released rules firestore.rules to cloud.firestore 
+[debug] [2026-08-20T10:55:24.180Z] [
+  {
+    "config": {
+      "public": "dist",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "headers": [
+        {
+          "source": "/assets/**",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=31536000, immutable"
+            }
+          ]
+        }
+      ],
+      "site": "parking-app-3556f"
+    },
+    "version": "projects/822236636602/sites/parking-app-3556f/versions/874951bcb6c944fa"
+  }
+]
+[info] i  hosting[parking-app-3556f]: finalizing version... 
+[debug] [2026-08-20T10:55:24.181Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:24.181Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:24.181Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/parking-app-3556f/versions/874951bcb6c944fa updateMask=status%2Cconfig
+[debug] [2026-08-20T10:55:24.181Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/parking-app-3556f/versions/874951bcb6c944fa {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}],"headers":[{"glob":"/assets/**","headers":{"Cache-Control":"public, max-age=31536000, immutable"}}]}}
+[debug] [2026-08-20T10:55:25.048Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/parking-app-3556f/versions/874951bcb6c944fa 200
+[debug] [2026-08-20T10:55:25.048Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/parking-app-3556f/versions/874951bcb6c944fa {"name":"projects/822236636602/sites/parking-app-3556f/versions/874951bcb6c944fa","status":"FINALIZED","config":{"headers":[{"headers":{"Cache-Control":"public, max-age=31536000, immutable"},"glob":"/assets/**"}],"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-08-20T10:55:14.998297Z","createUser":{"email":"gulfopaul3@gmail.com"},"finalizeTime":"2026-08-20T10:55:25.708864Z","finalizeUser":{"email":"gulfopaul3@gmail.com"}}
+[debug] [2026-08-20T10:55:25.048Z] [hosting] finalized version for parking-app-3556f:[object Object]
+[info] +  hosting[parking-app-3556f]: version finalized 
+[info] i  hosting[parking-app-3556f]: releasing new version... 
+[debug] [2026-08-20T10:55:25.049Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:25.049Z] Checked if tokens are valid: true, expires at: 1787225537967
+[debug] [2026-08-20T10:55:25.049Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/parking-app-3556f/channels/live/releases versionName=projects%2F822236636602%2Fsites%2Fparking-app-3556f%2Fversions%2F874951bcb6c944fa
+[debug] [2026-08-20T10:55:25.049Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/parking-app-3556f/channels/live/releases {}
+[debug] [2026-08-20T10:55:25.950Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/parking-app-3556f/channels/live/releases 200
+[debug] [2026-08-20T10:55:25.950Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/parking-app-3556f/channels/live/releases {"name":"projects/822236636602/sites/parking-app-3556f/channels/live/releases/1787223325920000","version":{"name":"projects/822236636602/sites/parking-app-3556f/versions/874951bcb6c944fa","status":"FINALIZED","config":{"headers":[{"headers":{"Cache-Control":"public, max-age=31536000, immutable"},"glob":"/assets/**"}],"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-08-20T10:55:14.998297Z","createUser":{"email":"gulfopaul3@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLJw9XG4PIled8vP_3WX6olvBiL4ama2e1Pa2EuD_2e14n0nSFy"},"finalizeTime":"2026-08-20T10:55:25.708864Z","finalizeUser":{"email":"gulfopaul3@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLJw9XG4PIled8vP_3WX6olvBiL4ama2e1Pa2EuD_2e14n0nSFy"}},"type":"DEPLOY","releaseTime":"2026-08-20T10:55:25.920Z","releaseUser":{"email":"gulfopaul3@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLJw9XG4PIled8vP_3WX6olvBiL4ama2e1Pa2EuD_2e14n0nSFy"}}
+[debug] [2026-08-20T10:55:25.950Z] [hosting] release: {"name":"projects/822236636602/sites/parking-app-3556f/channels/live/releases/1787223325920000","version":{"name":"projects/822236636602/sites/parking-app-3556f/versions/874951bcb6c944fa","status":"FINALIZED","config":{"headers":[{"headers":{"Cache-Control":"public, max-age=31536000, immutable"},"glob":"/assets/**"}],"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-08-20T10:55:14.998297Z","createUser":{"email":"gulfopaul3@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLJw9XG4PIled8vP_3WX6olvBiL4ama2e1Pa2EuD_2e14n0nSFy"},"finalizeTime":"2026-08-20T10:55:25.708864Z","finalizeUser":{"email":"gulfopaul3@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLJw9XG4PIled8vP_3WX6olvBiL4ama2e1Pa2EuD_2e14n0nSFy"}},"type":"DEPLOY","releaseTime":"2026-08-20T10:55:25.920Z","releaseUser":{"email":"gulfopaul3@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLJw9XG4PIled8vP_3WX6olvBiL4ama2e1Pa2EuD_2e14n0nSFy"}}
+[info] +  hosting[parking-app-3556f]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/parking-app-3556f/overview
+[info] Hosting URL: https://parking-app-3556f.web.app
+[debug] [2026-08-20T10:55:33.656Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\ADMIN\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:296:49)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[error] 
+[error] Error: An unexpected error has occurred.
