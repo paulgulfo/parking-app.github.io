@@ -1,39 +1,74 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+    // ==================== USERS COLLECTION ====================
+    // Stores user profile and role information
     match /users/{userId} {
+      // Users can only create their own profile
       allow create: if request.auth.uid == userId;
+      
+      // Users can read their own profile, admins can read all
       allow read: if request.auth.uid == userId || request.auth.token.role == 'admin';
+      
+      // Users can update their own profile, admins can update all
       allow update: if request.auth.uid == userId || request.auth.token.role == 'admin';
+      
+      // Only admins can delete user profiles
+      allow delete: if request.auth != null && request.auth.token.role == 'admin';
     }
 
+    // ==================== RESERVATIONS COLLECTION ====================
+    // Stores parking reservations made by users
     match /reservations/{resId} {
-      // Users can create their own reservations
-      allow create: if request.auth != null && request.resource.data.user == request.auth.token.email;
+      // Users can create reservations (must be their own email)
+      allow create: if request.auth != null && 
+                       request.resource.data.user == request.auth.token.email;
       
-      // Users can read their own reservations, guards can read all, admins can read all
+      // Read permissions: Users see their own, Guards see all, Admins see all
       allow read: if request.auth != null && (
         request.auth.token.role == 'admin' || 
         request.auth.token.role == 'guard' || 
         resource.data.user == request.auth.token.email
       );
       
-      // Users/Guards can update their reservations, admins can update all
+      // Update permissions: Users/Guards update their own, Admins update all
       allow update: if request.auth != null && (
         request.auth.token.role == 'admin' || 
+        request.auth.token.role == 'guard' ||
         resource.data.user == request.auth.token.email
       );
       
-      // Only admins can delete
-      allow delete: if request.auth != null && request.auth.token.role == 'admin';
+      // Only admins can delete reservations
+      allow delete: if request.auth != null && 
+                       request.auth.token.role == 'admin';
     }
 
+    // ==================== SLOTS COLLECTION ====================
+    // Stores parking slot information
     match /slots/{slotId} {
-      // Everyone can read slots
-      allow read: if true;
+      // Authenticated users can read slot availability
+      allow read: if request.auth != null;
       
-      // Only admins can write slots
-      allow write: if request.auth != null && request.auth.token.role == 'admin';
+      // Only admins can write/modify slots
+      allow write: if request.auth != null && 
+                      request.auth.token.role == 'admin';
+    }
+
+    // ==================== ANALYTICS COLLECTION ====================
+    // Stores parking analytics and statistics
+    match /analytics/{document=**} {
+      // Everyone can read analytics
+      allow read: if request.auth != null;
+      
+      // Only admins can write analytics
+      allow write: if request.auth != null && 
+                      request.auth.token.role == 'admin';
+    }
+
+    // ==================== DENY ALL BY DEFAULT ====================
+    // Any collection not explicitly defined is denied
+    match /{document=**} {
+      allow read, write: if false;
     }
   }
 }
