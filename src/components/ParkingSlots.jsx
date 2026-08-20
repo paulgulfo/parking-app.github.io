@@ -93,7 +93,7 @@ export default function ParkingSlots({ db, user }) {
         <div className="mt-6 p-4 bg-white rounded shadow">
           <h3 className="font-semibold">Reservation QR</h3>
           <div className="mt-3">
-            <QRCode value={`slot:${selected.slot.id};vehicle:${selected.vehicle}`} size={128} />
+            <QRCodeSVG value={`slot:${selected.slot.id};vehicle:${selected.vehicle}`} size={128} />
           </div>
         </div>
       )}
