@@ -1,7 +1,7 @@
 {
   "name": "Parking App",
   "short_name": "Parking",
-  "start_url": "/",
+  "start_url": "/parking-app/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0ea5a4"
